@@ -1,10 +1,9 @@
 require("dotenv").config();
-const connectDB = require('../db/db');
-const app = require('../app');
 
-connectDB();
-port = process.env.PORT;
+const app = require("../app");
+const connectDB = require("../db/db");
 
-app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
-});
+module.exports = async (req, res) => {
+  await connectDB();      // runs on every cold start
+  return app(req, res);   // hands request to Express
+};
