@@ -1,7 +1,7 @@
 require("dotenv").config();
 
-const app = require("../app");
-const connectDB = require("../db/db");
+const app = require("./src/app");
+const connectDB = require("./src/db/db");
 
 module.exports = async (req, res) => {
   await connectDB();      // runs on every cold start

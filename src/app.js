@@ -4,6 +4,7 @@ const cors = require("cors");
 
 const authRoutes = require("./Routes/Auth.routes");
 const dashboardRoutes = require("./Routes/dashboard.routes");
+const dbConnection = require("./db/db");
 
 const app = express();
 
@@ -32,6 +33,7 @@ app.use(
     })
 );
 
+app.use(dbConnection); 
 app.use("/api/auth/user", authRoutes);
 app.use("/api/user", dashboardRoutes);
 
