@@ -4,7 +4,8 @@
   "description": "",
   "main": "api/index.js",
   "scripts": {
-    "dev": "nodemon src/api/index.js"
+    "start": "node server.js",
+    "vercel-start": "node server.js"
   },
   "author": "Abhirup",
   "license": "ISC",
